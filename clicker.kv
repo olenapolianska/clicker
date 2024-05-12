@@ -1,0 +1,19 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "0"
+        FloatLayout:
+            Image:
+                id: ball
+                size_hint: 0.5, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                source: "ball.jpg"
+            Button:
+                size_hint: 0.5, 1
+                background_color: 1, 0, 0, 0.5
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                on_press: root.click()
+                on_release: root.unclick()
+        Button:
+            text: "123"
