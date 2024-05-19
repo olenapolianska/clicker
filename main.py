@@ -9,6 +9,15 @@ class MainScreen(Screen):
     def unclick(self):
         self.ids.ball.size_hint = (0.5, 0.5)
 
+class MenuScreen(Screen):
+    def __init__(self,**kw):
+        super().__init__(**kw)
+
+    def click(self):
+        self.ids.start.on_press = self.on_main_screen
+
+    def on_main_screen(self, *args):
+        self.manager.current = "main"
 
 class ClickerApp(App):
     def build(self):
@@ -16,6 +25,12 @@ class ClickerApp(App):
         sm.add_widget(MainScreen(name='main'))
         return sm
 
-app = ClickerApp()
+class MenuApp(App):
+    def build(self):
+        sm = ScreenManager()
+        sm.add_widget(MenuScreen(name='menu'))
+        return sm
+
+app = MenuApp()
 app.run()
 
