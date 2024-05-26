@@ -33,6 +33,9 @@ class MainScreen(Screen):
     def __init__(self,**kw):
         super().__init__(**kw)
 
+    def on_shop_screen(self, *args):
+        self.manager.current = "shop"
+
     def on_enter(self, *args):
         self.ids.score_lbl.text = "рахунок: "+str(player["score"])
 
@@ -59,6 +62,22 @@ class MenuScreen(Screen):
     def on_second_screen(self, *args):
         self.manager.current = "second"
 
+
+
+class ShopScreen(Screen):
+    def __init__(self,**kw):
+        super().__init__(**kw)
+
+    def buy(self, price, power):
+        read_data()
+        if price <= player["score"]:
+            player["score"] -= price
+            player["power"] += power
+            save_data()
+
+
+
+
 class ClickerApp(App):
     def build(self):
         sm = ScreenManager()
@@ -66,6 +85,7 @@ class ClickerApp(App):
         sm.add_widget(MenuScreen(name='menu'))
         sm.add_widget(MainScreen(name='main'))
         sm.add_widget(SecondScreen(name='second'))
+        sm.add_widget(ShopScreen(name='shop'))
         return sm
 
 

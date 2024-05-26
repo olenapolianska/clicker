@@ -17,13 +17,13 @@
                 on_press: root.click()
                 on_release: root.unclick()
         Button:
-            text: "123"
+            text: "Магазин"
+            size_hint: 0.5, 1
+            background_color: 1, 0, 0, 0
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_press: root.on_shop_screen()
 
-<SecondScreen>
-    BoxLayout:
-        orientation: "vertical"
-        Label:
-            text:"Введіть "
+
 
 
 
@@ -60,3 +60,76 @@
                 background_color: 1, 0, 0, 0
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
                 on_press: root.on_main_screen()
+
+
+<ShopScreen>:
+    FloatLayout:
+        Image:
+            source: 'wood.jpg'
+            allow_stretch: True
+            keep_ratio: False
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint: 1, 0.2
+                Button:
+                    text: "Назад"
+                   
+                Label:
+                    text: "Рахунок"
+            ScrollView:
+                size_hint_y: None
+                size_hint: 1, 1
+                GridLayout:
+                    id: shopItems
+                    size_hint_y: None
+                    height: self.minimum_height
+                    cols: 1
+                    row_default_height: 100
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(100, 10)
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'ball.jpg'
+
+                        Label:
+                            text: "+10"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                        Label:
+                            text: "100"
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0.35, 'center_y':0.5}
+
+                    FloatLayout:
+                        Button:
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(1000, 100)
+
+
+                        Image:
+                            size_hint: 0.1, 1
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'click.png'
+
+                        Label:
+                            text: "+100"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                        Label:
+                            text: "1000"
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0.35, 'center_y':0.5}
+
+
+
+
