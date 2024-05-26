@@ -37,13 +37,13 @@ class MainScreen(Screen):
         self.ids.score_lbl.text = "рахунок: "+str(player["score"])
 
     def click(self):
-        self.ids.ball.size_hint = (1, 1)
+        self.ids.click.size_hint = (1, 1)
         read_data()
         player["score"] += player["power"]
         self.ids.score_lbl.text = "рахунок: "+str(player["score"])
         save_data()
     def unclick(self):
-        self.ids.ball.size_hint = (0.5, 0.5)
+        self.ids.click.size_hint = (0.5, 0.5)
 
 class SecondScreen(Screen):
     def __init__(self,**kw):

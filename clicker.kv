@@ -6,10 +6,10 @@
             text: "0"
         FloatLayout:
             Image:
-                id: ball
+                id: click
                 size_hint: 0.5, 1
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                source: "ball.jpg"
+                source: "click.png"
             Button:
                 size_hint: 0.5, 1
                 background_color: 1, 0, 0, 0
@@ -30,24 +30,33 @@
 <MenuScreen>
     BoxLayout:
         orientation: "vertical"
-        Label:
-            text: "Меню"
-        FloatLayout:
-           Image:
-               id: ball
-               size_hint: 0.5, 1
-               pos_hint: {"center_x": 0.5, "center_y": 0.5}
-               source: "ball.jpg"
-        Button:
-            text: "Запустити гру"
-            size_hint: 0.5, 1
-            background_color: 1, 0, 0, 0
+        Image:
+            size_hint: 0.25, 0.5
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
-            on_press: root.on_main_screen()
-        Button:
-            text: "1"
-        Button:
-            text: "2"
-        Button:
-            text: "Налаштування профілю"
+            source: "mainscreen.png"
+        FloatLayout:
+            Image:
+                id: start
+                size_hint: 0.25, 0.5
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                source: "start.png"
 
+            Button:
+
+                size_hint: 0.5, 1
+                background_color: 1, 0, 0, 0
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                on_press: root.on_main_screen()
+        FloatLayout:
+            Image:
+                id: sett
+                size_hint: 0.25, 0.5
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                source: "settings.png"
+
+            Button:
+
+                size_hint: 0.5, 1
+                background_color: 1, 0, 0, 0
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                on_press: root.on_main_screen()
