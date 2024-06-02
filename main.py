@@ -37,13 +37,13 @@ class MainScreen(Screen):
         self.manager.current = "shop"
 
     def on_enter(self, *args):
-        self.ids.score_lbl.text = "рахунок: "+str(player["score"])
+        self.ids.score_lbl.text = "рахунок: "+ str(player["score"])
 
     def click(self):
         self.ids.click.size_hint = (1, 1)
         read_data()
         player["score"] += player["power"]
-        self.ids.score_lbl.text = "рахунок: "+str(player["score"])
+        self.ids.score_lbl.text = "рахунок: "+ str(player["score"])
         save_data()
     def unclick(self):
         self.ids.click.size_hint = (0.5, 0.5)
@@ -68,11 +68,16 @@ class ShopScreen(Screen):
     def __init__(self,**kw):
         super().__init__(**kw)
 
+    def on_enter(self, *args):
+        self.ids.money.text = "Рахунок: " + str(player["score"])
+
     def buy(self, price, power):
         read_data()
+
         if price <= player["score"]:
             player["score"] -= price
             player["power"] += power
+            self.ids.money.text = "Рахунок: " + str(player["score"])
             save_data()
     def on_main_screen(self, *args):
         self.manager.current = "main"
