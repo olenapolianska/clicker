@@ -75,7 +75,11 @@
                 size_hint: 1, 0.2
                 Button:
                     text: "Назад"
-                   
+                    size_hint: 0.5, 1
+                    background_color: 1, 0, 0, 0.5
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    on_press: root.on_main_screen()
+
                 Label:
                     text: "Рахунок"
             ScrollView:
@@ -89,6 +93,7 @@
                     row_default_height: 100
                     FloatLayout:
                         Button:
+                            background_color: 0, 0, 0, 0.5
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
                             on_press: root.buy(100, 10)
@@ -96,7 +101,7 @@
                         Image:
                             size_hint: 0.1, 1
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'ball.jpg'
+                            source: 'sun.png'
 
                         Label:
                             text: "+10"
@@ -110,6 +115,7 @@
 
                     FloatLayout:
                         Button:
+                            background_color: 0, 0, 0, 0.5
                             size_hint: 1, 1
                             pos_hint: {'center_x': 0.5, 'center_y':0.5}
                             on_press: root.buy(1000, 100)
@@ -118,7 +124,7 @@
                         Image:
                             size_hint: 0.1, 1
                             pos_hint: {'x': 0, 'center_y':0.5}
-                            source: 'click.png'
+                            source: 'fire.png'
 
                         Label:
                             text: "+100"
@@ -127,6 +133,73 @@
 
                         Label:
                             text: "1000"
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0.35, 'center_y':0.5}
+
+                    FloatLayout:
+                        Button:
+                            background_color: 0, 0, 0, 0.5
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(10000, 1000)
+
+
+                        Image:
+                            size_hint: 0.09, 0.9
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'lightning.png'
+
+                        Label:
+                            text: "+1000"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                        Label:
+                            text: "10000"
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0.35, 'center_y':0.5}
+                    FloatLayout:
+                        Button:
+                            background_color: 0, 0, 0, 0.5
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(100000, 10000)
+
+
+                        Image:
+                            size_hint: 0.09, 0.9
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'water.png'
+
+                        Label:
+                            text: "+10000"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                        Label:
+                            text: "100000"
+                            size_hint: 1, 1
+                            pos_hint: {'x': 0.35, 'center_y':0.5}
+                    FloatLayout:
+                        Button:
+                            background_color: 0, 0, 0, 0.5
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+                            on_press: root.buy(1000000, 100000)
+
+
+                        Image:
+                            size_hint: 0.09, 0.9
+                            pos_hint: {'x': 0, 'center_y':0.5}
+                            source: 'wind.png'
+
+                        Label:
+                            text: "+10000"
+                            size_hint: 1, 1
+                            pos_hint: {'center_x': 0.5, 'center_y':0.5}
+
+                        Label:
+                            text: "100000"
                             size_hint: 1, 1
                             pos_hint: {'x': 0.35, 'center_y':0.5}
 

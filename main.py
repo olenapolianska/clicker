@@ -74,6 +74,10 @@ class ShopScreen(Screen):
             player["score"] -= price
             player["power"] += power
             save_data()
+    def on_main_screen(self, *args):
+        self.manager.current = "main"
+
+
 
 
 
